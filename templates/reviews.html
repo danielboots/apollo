@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+</head>
+
+<body>
+    {% for review in reviews %}
+        {{ reviews.genre }} <br>
+        {{ reviews.artist_name }} <br>
+        {{ reviews.track_title }} <br>
+        {{ reviews.album_title }} <br>
+        {{ reviews.review }} <br>
+        {{ reviews.hot_not }} <br>
+    {% endfor %}.
+
+</body>
+
+</html>
