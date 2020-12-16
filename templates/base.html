@@ -16,12 +16,59 @@
 
     <title>Apollo - Music Review</title>
 </head>
+
+<header class="hero-apollo">
+		<!--Navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<!-- Navbar brand -->
+			<a href="{{ url_for('get_reviews')}}" class="">APOLLO - Music Review</a>
+<!-- <img class="brandlogo" src="#" alt="logo"> -->
+			<!-- Collapse button -->
+			<button 
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="basicExampleNav">
+				<!-- Nav Links -->
+				<ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('get_reviews')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Add Review</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>  
+				</ul>  
+			</div>
+		</nav>
+		<!-- End /.Navbar-->
+		<div class="container-fluid">
+			<!--Hero Section -->   
+
+			<div class="hero-text">
+				<h1 class="text-focus-in rotate">Apollo</h1>
+				<h5 class="focus-in-contract-bck">Music Review</h5>
+			
+			</div> 
+		</div>
+	</header>
+
+
 <body>
+    <div class="container-max">
     <h1>Im part of the base template</h1>
     {% block reviews %}
 
     {% endblock %}
-
+</div>
 
 
     <!-- JQuery -->
