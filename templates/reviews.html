@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
-</head>
-
-<body>
-   why is my for loop not working !!!! AAAARRRGH 
+<h2>im extending the base template.</h2>
+  
     {% for reviews in reviews %}
         {{ reviews.genre }} <br>
         {{ reviews.artist_name }} <br>
@@ -18,6 +12,4 @@
         {{ reviews.hot_not }} <br>
     {% endfor %}
 
-</body>
-
-</html>
+    {% endblock %}
