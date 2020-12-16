@@ -21,7 +21,7 @@ body {
 /* header - hero sections */
  
 .hero-apollo {
-  background-color: black;
+  background: url("../img/musicreview.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -141,6 +141,11 @@ body {
 }
 
 
+.card-img-top {
+    width: 100%;
+    
+    object-fit: cover;
+}
 
 
 

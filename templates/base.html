@@ -45,7 +45,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Add Review</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>  
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register')}}">Register</a></li>  
 				</ul>  
 			</div>
 		</nav>
@@ -64,8 +64,8 @@
 
 <body>
     <div class="container-max">
-    <h1>Im part of the base template</h1>
-    {% block reviews %}
+   
+    {% block content %}
 
     {% endblock %}
 </div>
