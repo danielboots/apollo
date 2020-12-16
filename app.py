@@ -63,7 +63,6 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
-                        
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
