@@ -9,7 +9,7 @@
         {{ reviews.track_title }} <br>
         {{ reviews.album_title }} <br>
         {{ reviews.review }} <br>
-        {{ reviews.hot_not }} <br>
+         <br>
     {% endfor %}
 
 <!--Accordion wrapper-->
@@ -39,11 +39,34 @@
                 Review: {{ reviews.review }} <br>
                 <br>
 
-                <h3>Hot or not!!!! </h3>
+                <h5>Is this track hot or not Max 5 chillis</h5>
 
                 <!-- Working now using string instead of Boolean. -->
-                {% if reviews.hot_not == "on" %}
-                       <i class="fas fa-pepper-hot"></i> <h3>ARRRIBA</h3>
+                {% if reviews.hot_not == "1" %}
+                <i class="fas fa-pepper-hot"></i>
+                <h3>Mild Tingle</h3>
+                {% elif reviews.hot_not == "2" %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                    <h3>Hey We getting hotter</h3>
+                    {% elif reviews.hot_not == "3" %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                    <h3>Scorching</h3>
+                    {% elif reviews.hot_not == "4" %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                    <h3>Firecracker</h3>
+                    {% elif reviews.hot_not == "5" %}
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                    <h3>To Hot to handle</h3>
                     {% endif %}
                 
             </div>
