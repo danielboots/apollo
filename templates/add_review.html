@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="text-center">Add New Review</h2>
+
+<form class="card-body" method="POST" action="{{ url_for('register')}}" >
+                    <!-- Username -->
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-user-plus"></i>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                        <label for="username">Username</label>
+                    </div>
+                    <!-- Password-->
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-user-lock"></i>
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="row">
+                        <!-- Register-->
+                        <button type="submit" class="btn btn-dark pill-btn ">Register <i
+                                class="fas fa-sign-in-alt"></i></button>
+
+                    </div>
+
+                </form>
+
+{% endblock %}
