@@ -3,7 +3,79 @@
 
 <h2 class="text-center">Add New Review</h2>
 
+<!--New Form-->
+
+<form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Submit New Review</p>
+
+    <!-- Artist -->
+      <label for="artist_name">Add Artist Name</label>
+    <input id="artist_name" name="artist_name" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" required class="form-control validate mb-4">
+                  
+
+    <!-- Track -->
+    <label for="track_title">Add Track Title</label>
+    <input id="track_title" name="track_title" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" required class="form-control validate mb-4">
+                    
+
+
+    <!-- Album -->
+    <label for="album_title">Add Album title</label> 
+    <input id="album_title" name="album_title" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" required class="form-control validate mb-4">
+                                  
+
+    
+
+    <!-- Genre Sub Category -->
+<label for="genre">Select Track Genre</label>
+    <label>Genre</label>
+    <select id="genre" name="genre" class="browser-default custom-select mb-4" required>
+        <option value="" disabled>Choose Genre </option>
+        {% for genre in genre %}
+        <option value="{{genre.genre}}">{{genre.genre}} </option>
+        {% endfor %}
+        
+    </select>
+
+    <!-- Review -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+    </div>
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+
+
+
+<!--End Form-->
+
+
+
 <form class="card-body" method="POST" action="{{ url_for('register')}}">
+<div class="row">
+<div class="col">
+
+    <select class="browser-default custom-select">
+        <h2>genres</h2>
+        <label for="genre">Review Genre</label>
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+    
+</div>
+
+</div>
+
     <!-- Review Name -->
 
     <div class="row">
@@ -55,8 +127,8 @@
     </div>
 
     <div class="row">
-        <!-- Register-->
-        <button type="submit" class="btn btn-dark pill-btn ">Register <i class="fas fa-sign-in-alt"></i></button>
+        <!-- Submit review-->
+        <button type="submit" class="btn btn-dark pill-btn ">Submit Review <i class="fas fa-sign-in-alt"></i></button>
 
     </div>
 
