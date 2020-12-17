@@ -3,26 +3,63 @@
 
 <h2 class="text-center">Add New Review</h2>
 
-<form class="card-body" method="POST" action="{{ url_for('register')}}" >
-                    <!-- Username -->
-                    <div class="form-outline mb-4">
-                        <i class="fas fa-user-plus"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
-                        <label for="username">Username</label>
-                    </div>
-                    <!-- Password-->
-                    <div class="form-outline mb-4">
-                        <i class="fas fa-user-lock"></i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="row">
-                        <!-- Register-->
-                        <button type="submit" class="btn btn-dark pill-btn ">Register <i
-                                class="fas fa-sign-in-alt"></i></button>
+<form class="card-body" method="POST" action="{{ url_for('register')}}">
+    <!-- Review Name -->
 
-                    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-outline mb-4">
+                <i class="fas fa-user-plus"></i>
+                <input id="artist_name" name="artist_name" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                <label for="artist_name">Add Artist name</label>
+            </div>
+        </div>
+    </div>
 
-                </form>
+    <!-- Track Title -->
+
+    <div class="row">
+        <div class="col">
+            <div class="form-outline mb-4">
+                <i class="fas fa-user-plus"></i>
+                <input id="track_title" name="track_title" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                <label for="track_title">Add Track name</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Album Title -->
+ <div class="row">
+        <div class="col">
+            <div class="form-outline mb-4">
+                <i class="fas fa-user-plus"></i>
+                <input id="album_title" name="album_title" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                <label for="album_title">Add Album name</label>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Review-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group shadow-textarea">
+                <label for="review">Add review of track here.</label>
+                <textarea class="form-control z-depth-1" id="review" name="review" rows="3" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" placeholder="your review..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Register-->
+        <button type="submit" class="btn btn-dark pill-btn ">Register <i class="fas fa-sign-in-alt"></i></button>
+
+    </div>
+
+</form>
 
 {% endblock %}
