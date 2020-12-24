@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="text-center">Add Genre</h2>
+
+<!--New Form-->
+
+<form class="text-center border border-light p-5" method="POST" action="{{ url_for('add_genre') }}">
+
+    <p class="h4 mb-4">Add New Genre</p>
+
+    <!-- Genre Name -->
+    <label for="genre_name">Add New genre</label>
+    <input id="genre_name" name="genre_name" type="text" minlength="3" maxlength="25" required
+        class="form-control validate mb-4">
+   
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Add Genre</button>
+
+</form>
+
+<!--End Form-->
+{% endblock %}
