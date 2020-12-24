@@ -70,11 +70,15 @@
                     <h3>To Hot to handle</h3>
                     {% endif %}
                 <div class="col">
-                        <i class="fas fa-user-edit"></i>
-
-                    
-                        <a href="#" class="btn btn-sm">Done</a>
+                        
+                    {% if session.user|lower == reviews.created_by|lower %}
+                    <i class="fas fa-user-edit"></i>
                         <a href="{{ url_for('edit_review', review_id=reviews._id) }}" class="btn btn-sm ">Edit</a>
+                        <a href="{{ url_for('delete_review', review_id=reviews._id) }}" class="btn btn-sm">DELETE</a>
+                    {% endif %}
+                    
+                        
+                        
                         
 </div>
             </div>

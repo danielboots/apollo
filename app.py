@@ -103,6 +103,7 @@ def logout():
 def add_review():
     if request.method == "POST":
         review = {
+            "genre": request.form.get("genre"),
             "artist_name": request.form.get("artist_name"),
             "track_title": request.form.get("track_title"),
             "album_title": request.form.get("album_title"),
@@ -119,10 +120,29 @@ def add_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "genre": request.form.get("genre"),
+            "artist_name": request.form.get("artist_name"),
+            "track_title": request.form.get("track_title"),
+            "album_title": request.form.get("album_title"),
+            "review": request.form.get("review"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Successfully updated")
+
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
     genre = mongo.db.genre.find().sort("genre", 1)
     return render_template("edit_review.html", review=review, genre=genre)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted ")
+    return redirect(url_for("get_reviews"))
 
 
 if __name__ == "__main__":
