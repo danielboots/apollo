@@ -69,7 +69,14 @@
                 <i class="fas fa-pepper-hot"></i>
                     <h3>To Hot to handle</h3>
                     {% endif %}
-                
+                <div class="col">
+                        <i class="fas fa-user-edit"></i>
+
+                    
+                        <a href="#" class="btn btn-sm">Done</a>
+                        <a href="{{ url_for('edit_review', review_id=reviews._id) }}" class="btn btn-sm ">Edit</a>
+                        
+</div>
             </div>
         </div>
 
