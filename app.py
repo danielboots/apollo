@@ -166,6 +166,13 @@ def add_genre():
 
 @app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
 def edit_genre(genre_id):
+    if request.method == "POST":
+        submit = {
+            "genre": request.form.get("genre")
+        }
+        mongo.db.genre.update({"_id": ObjectId(genre_id)}, submit)
+        flash("Genre Successfully Updated")
+        return redirect(url_for("get_genres"))
     genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
     return render_template("edit_genre.html", genre=genre)
 

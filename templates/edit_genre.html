@@ -10,11 +10,11 @@
     <p class="h4 mb-4">EDIT New Genre</p>
 
     <!-- Genre Name -->
-    <label for="genre_name">EDIT  New genre</label>
-    <input id="genre_name" name="genre_name" type="text" value="{{ genre.genre }}" minlength="3" maxlength="25" required
+    <label for="genre">EDIT  New genre</label>
+    <input id="genre" name="genre" type="text" value="{{ genre.genre }}" minlength="3" maxlength="25" required
         class="form-control validate mb-4">
    
-        <a href="#"></a>
+        <a href="{{url_for('get_genres')}}">cancel</a>
     <!-- Send button -->
     <button class="btn btn-info btn-block" type="submit">Edit Genre</button>
 
