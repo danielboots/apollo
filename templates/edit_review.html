@@ -11,16 +11,16 @@
 
     <!-- Artist -->
     <label for="artist_name">EDIT Artist Name</label>
-    <input id="artist_name" name="artist_name" type="text" minlength="3" maxlength="50" required
+    <input id="artist_name" name="artist_name" value="{{ review.artist_name }}" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
     <!-- Track -->
     <label for="track_title">EDIT Track Title</label>
-    <input id="track_title" name="track_title" type="text" minlength="3" maxlength="50" required
+    <input id="track_title" name="track_title" value="{{ review.track_title }}" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
 
     <!-- Album -->
     <label for="album_title">EDIT Album title</label>
-    <input id="album_title" name="album_title" type="text" minlength="3" maxlength="50" required
+    <input id="album_title" name="album_title" value="{{ review.album_title }}" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
 
 
@@ -29,7 +29,9 @@
     <label>Genre</label>
     <select id="genre" name="genre" class="browser-default custom-select mb-4 " required>
         {% for genre in genre %}
+            
         <option value="{{genre.genre}}">{{genre.genre}} </option>
+            
         {% endfor %}
 
     </select>
@@ -38,11 +40,14 @@
     <div class="form-group">
         <label for="review">Review</label>
         <textarea class="form-control rounded-0" id="review" name="review" rows="3"
-            placeholder="Add your review here."></textarea>
+            placeholder="Add your review here.">{{ review.review }}</textarea>
     </div>
-
+<!-- cancel button -->
+                    <a href="{{ url_for('get_reviews') }}" class="btn btn-sm  ">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
     <!-- Send button -->
-    <button class="btn btn-info btn-block" type="submit">AMMEND</button>
+    <button class="btn btn-sm " type="submit">AMMEND</button>
 
 </form>
 
