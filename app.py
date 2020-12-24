@@ -147,7 +147,7 @@ def delete_review(review_id):
 
 @app.route("/get_genre")
 def get_genres():
-    genres = list(mongo.db.genre.find().sort("genre_name", 1))
+    genres = list(mongo.db.genre.find().sort("genre", 1))
     return render_template("genres.html", genres=genres)
 
 
@@ -155,13 +155,19 @@ def get_genres():
 def add_genre():
     if request.method == "POST":
         genre = {
-            "genre_name": request.form.get("genre_name")
+            "genre": request.form.get("genre")
         }
         mongo.db.genre.insert_one(genre)
         flash("New Genre Added")
         return redirect(url_for("get_genres"))
 
     return render_template("add_genre.html")
+
+
+@app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
+def edit_genre(genre_id):
+    genre = mongo.db.genre.find_one({"_id": ObjectId(genre_id)})
+    return render_template("edit_genre.html", genre=genre)
 
 
 if __name__ == "__main__":

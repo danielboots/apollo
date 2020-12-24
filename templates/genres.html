@@ -16,21 +16,17 @@
     {% for genre in genres %}
     <div class="col-md-6">
         <div class="card">
-
-            <!-- Card image -->
-            <img class="card-img-top" src="#" alt="Card image cap">
-
             <!-- Card content -->
             <div class="card-body">
 
                 <!-- Title -->
                 <h4 class="card-title"><a>{{genre.genre}}</a></h4>
-                <!-- Text -->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
+                                <h4 class="card-title"><a></a></h4>
+
+              
+                
                 <!-- Button -->
-                <a href="#" class="btn btn-primary">Edit Genre</a>
+                <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="btn btn-primary">Edit Genre</a>
                 <a href="#" class="btn btn-primary">Delete Genre</a>
             </div>
         </div>
@@ -40,3 +36,4 @@
 <!-- Card -->
 
 {% endblock %}
+
