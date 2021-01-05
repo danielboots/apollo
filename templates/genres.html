@@ -1,39 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="text-center"> Manage le Genres</h3>
+<h3 class="text-center">Admin - Genre Management System.</h3>
 <!-- Card -->
 
-<div class="row">
-<div class="col">
-<a href="{{ url_for('add_genre')}}" class="btn">Add Genre </a>
 
-</div>
+<div class="container-fluid">
+    <div class="container-max">
+        <div class="row">
 
 
-</div>
-<div class="row container-fluid">
-    {% for genre in genres %}
-    <div class="col-md-6">
-        <div class="card">
-            <!-- Card content -->
-            <div class="card-body">
 
-                <!-- Title -->
-                <h4 class="card-title"><a>{{genre.genre}}</a></h4>
-                                <h4 class="card-title"><a></a></h4>
 
-              
-                
-                <!-- Button -->
-                <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="btn btn-primary">Edit Genre</a>
-                <a href="{{ url_for('delete_genre', genre_id=genre._id) }}" class="btn btn-primary">Delete Genre</a>
+            {% for genre in genres %}
+            <div class="col-md-6 spacer">
+                <div class="card">
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title"><a>{{genre.genre}}</a></h4>
+                        <h4 class="card-title"><a></a></h4>
+
+
+
+                        <!-- Button -->
+                        <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="btn btn-dark">Edit Genre</a>
+                        <a href="{{ url_for('delete_genre', genre_id=genre._id) }}" class="btn btn-dark">Delete
+                            Genre</a>
+                    </div>
+                </div>
             </div>
+
+            {% endfor %}
         </div>
+
+
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('add_genre')}}" class="btn">Add Genre </a>
+
+            </div>
+
+        </div>
+
+
+
     </div>
-    {% endfor %}
+
+
 </div>
 <!-- Card -->
 
 {% endblock %}
-

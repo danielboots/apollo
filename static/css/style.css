@@ -168,7 +168,9 @@ body {
 
 }
 
-
+.card-block {
+    display: inline-block;
+}
 
 
 

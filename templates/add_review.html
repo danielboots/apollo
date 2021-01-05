@@ -1,26 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="text-center">Add New Review</h2>
-
+<h3 class="text-center">Add New Review</h3>
 <!--New Form-->
-
 <form class="text-center border border-light p-5" method="POST" action="{{ url_for('add_review') }}">
 
-    <p class="h4 mb-4">Submit New Review</p>
-
     <!-- Artist -->
-    <label for="artist_name">Add Artist Name</label>
-    <input id="artist_name" name="artist_name" type="text" minlength="3" maxlength="50" required
+    <label for="artist_name">Artist Name</label>
+    <input id="artist_name" placeholder="Enter Artist Name" name="artist_name" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
     <!-- Track -->
-    <label for="track_title">Add Track Title</label>
-    <input id="track_title" name="track_title" type="text" minlength="3" maxlength="50" required
+    <label for="track_title">Track Title</label>
+    <input id="track_title" placeholder="Enter Track Title " name="track_title" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
 
     <!-- Album -->
-    <label for="album_title">Add Album title</label>
-    <input id="album_title" name="album_title" type="text" minlength="3" maxlength="50" required
+    <label for="album_title">Album title</label>
+    <input id="album_title" placeholder="Add Album Title" name="album_title" type="text" minlength="3" maxlength="50" required
         class="form-control validate mb-4">
 
 
@@ -42,7 +38,7 @@
     </div>
 
     <!-- Send button -->
-    <button class="btn btn-info btn-block" type="submit">Send</button>
+    <button class="btn btn-info btn-dark" type="submit">Send</button>
 
 </form>
 
