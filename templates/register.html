@@ -1,24 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>register</h3>
-<div class="container-max">
-    <div class="container-fluid">
-        <div class="col">
-            <div class="card card-img-top">
-                <img src="#" class="card-img-top" alt="..." />
 
-                <form class="card-body" method="POST" action="{{ url_for('register')}}" >
+<!-- Material form contact -->
+<div class="card">
+
+    <h5 class="card-header unique-color-dark white-text text-center py-4">
+        <strong>Register</strong>
+    </h5>
+
+    <p class="text-center">By registering to Apollo music review, you can post your own music reviews of the bands, artists and acts you love the most</p>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+<form class="card-body" method="POST" action="{{ url_for('register')}}" >
                     <!-- Username -->
                     <div class="form-outline mb-4">
                         <i class="fas fa-user-plus"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required />
                         <label for="username">Username</label>
                     </div>
                     <!-- Password-->
                     <div class="form-outline mb-4">
                         <i class="fas fa-user-lock"></i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required />
                         <label for="password">Password</label>
                     </div>
                     <div class="row">
@@ -28,18 +33,19 @@
 
                     </div>
 
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col ">
-                <p class="center-align">
+       
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+
+
+
+
                     Already a member?
                     <a href="{{ url_for('login') }}" class="">Login</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+         
 
 {% endblock %}

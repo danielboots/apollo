@@ -200,6 +200,10 @@ body {
     display: inline-block;
 }
 
+.footer-padding {
+    padding-top: 25px;
+    
+}
 
 
 /* media query from chrome - addition of this media query to line up hero text better on smaller screen sizes. */

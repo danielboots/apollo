@@ -1,48 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>login</h3>
-<div class="container-max">
-    <div class="container-fluid">
-        <div class="col">
-            <div class="card card-img-top">
-                <img src="#" class="card-img-top" alt="..." />
 
-                <form class="card-body" method="POST" action="{{ url_for('login')}}">
-                    <!-- Username -->
-                    <div class="form-outline mb-4">
-                        <i class="fas fa-user-cog"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
-                        <label for="username">Username</label>
-                    </div>
-                    <!-- Password-->
-                    <div class="form-outline mb-4">
-                        <i class="fas fa-user-lock"></i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required />
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="row">
-                        <!-- login-->
-                        <button type="submit" class="btn btn-dark pill-btn ">Register <i
-                                class="fas fa-sign-in-alt"></i></button>
+<!-- Material form contact -->
+<div class="card">
 
-                    </div>
+    <h5 class="card-header unique-color-dark white-text text-center py-4">
+        <strong>Login</strong>
+    </h5>
 
-                </form>
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <form class="card-body" method="POST" action="{{ url_for('login')}}">
+            <!-- Username -->
+            <div class="form-outline mb-4">
+                <i class="fas fa-user-cog"></i>
+                <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required />
+                <label for="username">Username</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="col ">
-                <p class="center-align">
-                    No account?
-                    <a href="{{ url_for('register') }}" class="">Register</a>
-                </p>
+            <!-- Password-->
+            <div class="form-outline mb-4">
+                <i class="fas fa-user-lock"></i>
+                <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate form-control" required />
+                <label for="password">Password</label>
             </div>
-        </div>
+            <div class="row">
+                <!-- login-->
+                <button type="submit" class="btn btn-dark pill-btn ">Login <i class="fas fa-sign-in-alt"></i></button>
+
+            </div>
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+<!-- Material form contact -->
+
+
+<div class="row">
+    <div class="col ">
+        <p class="text-align">
+            No account?
+            <a href="{{ url_for('register') }}" class="">Register</a>
+        </p>
     </div>
 </div>
+
 
 
 
