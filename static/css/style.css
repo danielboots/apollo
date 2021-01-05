@@ -176,7 +176,10 @@ body {
 }
 
 .flashes {
+    font-weight: 600;
     line-height: 2;
+    text-align: center;
+    margin: auto;
 }
 
 .spacer {
