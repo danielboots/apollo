@@ -52,17 +52,16 @@
 
                     <!-- Card image -->
                     <div class="">
-                        <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                            alt="Card image cap">
-                        <a>
+                        <img class="card-img-top" src="{{ reviews.artwork }}" alt="Placeholder image">
+                        
                             <div class="mask rgba-white-slight"></div>
-                        </a>
+                
                     </div>
 
                     <!-- Card content -->
                     <div class="card-body card-body-cascade">
 
+                       
                         
                         <!-- Title -->
                         <h5 class="card-title"> <strong>Artist Name: </strong> {{ reviews.artist_name }} </h5>
@@ -110,6 +109,13 @@
 
 
                         </div>
+                        <div class="row">
+<div class="col">
+
+    <a href="{{ url_for('view_review', review_id=reviews._id) }}" class="btn btn-dark pill-btn">View Full Review</a>
+</div>
+
+                        </div>
 
                         <!-- Card footer -->
                         <div class="col">
@@ -117,6 +123,9 @@
                             Review by: {{ reviews.created_by }}
                         </div>
                         </div>
+
+
+                        
                     {% if session.user|lower == reviews.created_by|lower %}
                             <i class="fas fa-user-edit"></i>
                             <a href="{{ url_for('edit_review', review_id=reviews._id) }}" class="btn btn-sm btn-dark">Edit</a>

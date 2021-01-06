@@ -114,6 +114,7 @@ def add_review():
             "artist_name": request.form.get("artist_name"),
             "track_title": request.form.get("track_title"),
             "album_title": request.form.get("album_title"),
+            "artwork": request.form.get("artwork"),
             "review": request.form.get("review"),
             "hot_not": request.form.get("hot_not"),
             "created_by": session["user"]
@@ -134,6 +135,7 @@ def edit_review(review_id):
             "artist_name": request.form.get("artist_name"),
             "track_title": request.form.get("track_title"),
             "album_title": request.form.get("album_title"),
+            "artwork": request.form.get("artwork"),
             "review": request.form.get("review"),
             "hot_not": request.form.get("hot_not"),
             "created_by": session["user"]
@@ -191,6 +193,14 @@ def delete_genre(genre_id):
     mongo.db.genre.remove({"_id": ObjectId(genre_id)})
     flash("genre Successfully Deleted")
     return redirect(url_for("get_genres"))
+
+
+# View review - custom addition to program.
+@app.route("/view_review/<review_id>", methods=["GET"])
+def view_review(review_id):
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("view_review.html", review=review)
 
 
 if __name__ == "__main__":
