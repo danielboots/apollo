@@ -42,6 +42,19 @@
         <textarea class="form-control rounded-0" id="review" name="review" rows="3"
             placeholder="Add your review here.">{{ review.review }}</textarea>
     </div>
+
+<!-- Hot or not -->
+    <label for="hot_not">Hot or Not</label>
+    <select class="mdb-select md-form form-control" id="hot_not" name="hot_not" required  >
+        
+  <option value="" disabled selected>Choose a Chilli Rating - 1 not 5 Hot</option>
+  <option value="1">1. </option>
+  <option value="2">2.</option>
+  <option value="3">3.</option>
+  <option value="4">4.</option>
+  <option value="5">5.</option>
+</select>
+
 <!-- cancel button -->
                     <a href="{{ url_for('get_reviews') }}" class="btn btn-sm  ">
                         Cancel <i class="fas fa-times-circle right"></i>

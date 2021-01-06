@@ -115,6 +115,7 @@ def add_review():
             "track_title": request.form.get("track_title"),
             "album_title": request.form.get("album_title"),
             "review": request.form.get("review"),
+            "hot_not": request.form.get("hot_not"),
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
@@ -134,6 +135,7 @@ def edit_review(review_id):
             "track_title": request.form.get("track_title"),
             "album_title": request.form.get("album_title"),
             "review": request.form.get("review"),
+            "hot_not": request.form.get("hot_not"),
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
