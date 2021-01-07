@@ -171,9 +171,11 @@ body {
 
 .card-img-top {
     width: 100%;
-    height: 10vw;
+    height: 250px;
     object-fit: cover;
+    
 }
+
 
 .flashes {
     font-weight: 600;
@@ -187,6 +189,16 @@ body {
     margin-bottom: 25px;
 
 }
+
+.review-spacer {
+    padding: 5%;
+}
+
+.row-background {
+background-color: #fafafa;
+
+} 
+
 
 .card-padding {
     padding: 5px;

@@ -1,67 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container-fluid spacer ">
+    <div class="container-max view overlay z-depth-1-half spacer rounded-lg">
+        <div class="view overlay z-depth-1-half">
+            <img class="card-img-top rounded-lg" src="{{ review.artwork }}" alt="Placeholder image">
+        </div>
+        <div class="col">
+            <h1 class="text-center spacer"> {{ review.artist_name }}</h1>
+        </div>
 
-<div class="container-fluid">
-    <div class="container-max">
-        <img class="card-img-top" src="{{ review.artwork }}" alt="Placeholder image">
-        <h1 class="text-center" > {{ review.artist_name }}</h1>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row ">
+            <div class="col-md-6  text-center ">
 
 
-
-
-
-                <div class="col">
-                    <h5 class=""> <strong>Album title:</strong> {{ review.album_title }} </h5>
-                    <h5 class=""> <strong>Track title:</strong> {{ review.track_title }} </h5>
-
-                </div>
+                <h5 class=""> <strong>Track title:</strong> {{ review.track_title }} </h5>
+                <h5 class=""> <strong>Album title:</strong> {{ review.album_title }} </h5>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 text-center ">
 
-<h5 class="card-title deep-purple-text" > <strong>Chilli Rating</strong> </h5>
+                <h5 class="card-title deep-purple-text"> <strong>Chilli Rating</strong> </h5>
 
-                        <!-- Working now using string instead of Boolean. -->
-                        {% if review.hot_not == "1" %}
-                        <i class="fas fa-pepper-hot red-text "></i>
-                        <h5 class="red-text">Mild Tingle</h5>
-                        {% elif review.hot_not == "2" %}
-                        <i class="fas fa-pepper-hot red-text "></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">Hey We getting hotter</h5>
-                        {% elif review.hot_not == "3" %}
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">Scorching</h5>
-                        {% elif review.hot_not == "4" %}
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                       <h5 class="red-text">Firecracker</h5>
-                        {% elif review.hot_not == "5" %}
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">To Hot to handle</h5>
-                        {% endif %}
-
+                <!-- Working now using string instead of Boolean. -->
+                {% if review.hot_not == "1" %}
+                <i class="fas fa-pepper-hot red-text "></i>
+                <h5 class="red-text">Mild Tingle</h5>
+                {% elif review.hot_not == "2" %}
+                <i class="fas fa-pepper-hot red-text "></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <h5 class="red-text">Hey We getting hotter</h5>
+                {% elif review.hot_not == "3" %}
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <h5 class="red-text">Scorching</h5>
+                {% elif review.hot_not == "4" %}
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <h5 class="red-text">Firecracker</h5>
+                {% elif review.hot_not == "5" %}
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <i class="fas fa-pepper-hot red-text"></i>
+                <h5 class="red-text">To Hot to handle</h5>
+                {% endif %}
             </div>
         </div>
-<div class="col">
+        <div class="col spacer"></div>
 
-<p class="">{{ review.review }}</p>
-
-</div>
+        <p class="review-spacer">{{ review.review }}</p>
+        <h5 class="text-center"><strong>Review by:</strong> {{ review.created_by }} </h5>
     </div>
-
+     <a href="{{ url_for('get_reviews') }}" class="btn btn-dark pill-btn">More Reviews</a>
 </div>
+
+
+
+
+
 
 
 {% endblock %}

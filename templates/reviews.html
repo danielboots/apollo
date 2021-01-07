@@ -64,43 +64,39 @@
                        
                         
                         <!-- Title -->
-                        <h5 class="card-title"> <strong>Artist Name: </strong> {{ reviews.artist_name }} </h5>
-                        <h5 class="card-title"> <strong>Album title:</strong>  {{ reviews.album_title }} </h5>
-                        <h5 class="card-title"> <strong>Track title:</strong>  {{ reviews.track_title }} </h5>
+                        <h5 class="card-title "> <strong>Artist Name: </strong> {{ reviews.artist_name }} </h5>
+                        <h5 class="card-title "> <strong>Album title:</strong>  {{ reviews.album_title }} </h5>
+                        <h5 class="card-title "> <strong>Track title:</strong>  {{ reviews.track_title }} </h5>
                         <!-- Text -->
-                    
-                        <h6> <strong>Review</strong> </h6><br>
-                        <p class="card-text ">{{ reviews.review }}</p>
-                        <!-- Label -->
                         <h6 class="deep-purple-text pb-2 pt-1"><i class="fas fa-book-open"></i> {{ reviews.genre }}</h6>
-                        <h5 class="card-title deep-purple-text" > <strong>Chilli Rating</strong> </h5>
+                        <h5 class="card-title deep-purple-text" > <strong> <em>Chilli Rating</em> </strong> </h5>
 
                         <!-- Working now using string instead of Boolean. -->
                         {% if reviews.hot_not == "1" %}
                         <i class="fas fa-pepper-hot red-text "></i>
-                        <h5 class="red-text">Mild Tingle</h5>
+                        <h6 class="red-text">Mild Tingle</h6>
                         {% elif reviews.hot_not == "2" %}
                         <i class="fas fa-pepper-hot red-text "></i>
                         <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">Hey We getting hotter</h5>
+                        <h6 class="red-text">Hey We getting hotter</h6>
                         {% elif reviews.hot_not == "3" %}
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">Scorching</h5>
+                        <h6 class="red-text">Scorching</h6>
                         {% elif reviews.hot_not == "4" %}
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
-                       <h5 class="red-text">Firecracker</h5>
+                       <h6 class="red-text">Firecracker</h6>
                         {% elif reviews.hot_not == "5" %}
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
                         <i class="fas fa-pepper-hot red-text"></i>
-                        <h5 class="red-text">To Hot to handle</h5>
+                        <h6 class="red-text">To Hot to handle</h6>
                         {% endif %}
                         <div class="col text-center btn-spacer">
 
@@ -112,7 +108,7 @@
                         <div class="row">
 <div class="col">
 
-    <a href="{{ url_for('view_review', review_id=reviews._id) }}" class="btn btn-dark pill-btn">View Full Review</a>
+    <a href="{{ url_for('view_review', review_id=reviews._id) }}" class="btn btn-dark pill-btn">Read More</a>
 </div>
 
                         </div>
@@ -120,7 +116,7 @@
                         <!-- Card footer -->
                         <div class="col">
                         <div class="card-footer text-muted text-center">
-                            Review by: {{ reviews.created_by }}
+                            <strong>Review by:</strong>  {{ reviews.created_by }}
                         </div>
                         </div>
 
