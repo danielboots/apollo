@@ -225,7 +225,7 @@ background-color: #fafafa;
 
 @media all and (max-width: 425px) {
     .hero-text h1 {
-    font-size: 90px;
+    font-size: 50px;
 }
 
 /* media query from chrome */
