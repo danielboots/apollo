@@ -5,7 +5,7 @@
 ![Apollo logo and strap line ](static/img/responsive.png)
 
 ![index gif]()
-![user gif]()
+![user gif](static/media/review_page.gif)
 
 Apollo Music Review is currently deployed and can be visited directly at Heroku **[Apollo Music Review ](https://apollo-music-review.herokuapp.com/)**
 
