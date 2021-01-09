@@ -480,5 +480,222 @@ Furthemore i implemented a media query after using the Repsonsive Viewer extensi
 
 ```
 
+* Custom font on Heroku : (add to this section) https://blog.liplex.de/custom-fonts-on-heroku/ > not working add to known bugs.
+
 
 ## 🧪 **User Experience testing:**
+
+As this website is aimed at getting users to interact with the site through reading reviews or by registering to the site to become a user / review of the site i had to ensure that in my testing i adequately tested the UX and that it was simple enough for the user to "learn" how to use the site and follow industry standards and user expectations.
+
+This translated in to me using a top menu bar with LOGO positioned to the left as expected.
+For this website i havent provided an extensive array of menu options, only as much as neccessary in order to accomplish what the site sets out to achieve. So at this point in the web application infancy, i havent set menu options for latest reviews, top reviews, top reviewers etc. I am keeping it basic to maintain simplicity.
+
+I used many inbound links and tested all links ensuring that they all work and link correctly, this had to be tested on each individual review and review page as all data is being populated from the mongoDB database collection. So although i only have an index and view_review.html page as the main two pages for 90% of interaction in the app i had to test each page thoroughly as these pages are generated from user data pulled from MongoDB and all buttons and cards dynamically create their own pages templated from the view_review.html template.
+
+I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
+
+**User Experience: from top to bottom testing each feature for bugs**
+
+**Home / Navigation.**
+
+* Home Button always returns user to index.html
+* Apollo Logo always returns user to index.html
+* Profile menu item always directs users to their own profile page.
+* Add review menu item, always directs users to the add review form.
+* Login directs users to the login page
+* Logout logs out users and removes session cookie for the user.
+
+**Home / Search.**
+
+* Search Bar functioning and works for all string queries input to the text box.
+* Search Bar - doesnt work at this moment in time for chilli rating (this is intentional)
+* Search Bar - search button activates the search from input string.
+* Search Bar - reset button resets correctly and returns full array of reviews. 
+* Search Bar - reset resets search string on input if selected.
+
+**Home / Review cards.**
+
+* Review cards - Display 3 column on mid and large screens only as required. Effective us of grid system. 
+* Review cards - display review image as card image header. 
+* Review cards - Artist name displays for each review.
+* Review cards - Track title displays for each review.
+* Review cards - Album Title displays for each review.
+* Review cards - Genre type displays for each review.
+* Review cards - Chilli rating uses correct if elif statement  for each review, and displays correct amount of chillis corresponding to rating of review.
+* Review cards - Chilli rating - statement ie 'Too hot to handle, firecracker' displays correct and working. 
+* Review cards - Read more button, redirects user to the corresponding review, using view_review.html template. 
+* Review cards - Review by ` <name> `.  ie admin, displays correct info. 
+
+**Add Review.**
+
+* Add Review  -  Hero section inherited from base template displays correct.
+* Add Review  -  Form to add review displays correct and employs defensive design. 
+* Add Review  -  Artist name field only allows correct input criteria, required field active
+* Add Review  - track title field only allows correct input criteria
+* Add Review  - Album title field only allows correct input criteria, required field active
+* Add Review  - Artwork URL field only allows correct input criteria accepting only a URL. required field active
+* Add Review  - Genre selection fields displaying correct from genres input in MongoDB, can be selected and working, required field active 
+* Add Review  - Review text box allows text input and required field active. 
+* Add Review - Hot or not Chilli rating works as expected and returns correct chilli rating value on each review. required field active 
+* Add Review - Send button uses post method and allows data to be input to mongoDB. required field active. 
+
+**Review / Edit Review.**
+
+**Review / Edit Review.**-  
+* Hero section inherited from base template displays correct. 
+* Edit Review  -  Form to add review displays correct and employs defensive design. 
+* Edit Review  -  Artist name field only allows correct input criteria, required field active
+* Edit Review  - track title field only allows correct input criteria
+* Edit Review  - Album title field only allows correct input criteria, required field active
+* Edit Review  - Artwork URL field only allows correct input criteria accepting only a URL. required field active
+* Edit Review  - Genre selection fields displaying correct from genres input in MongoDB, can be selected and working, required field active 
+* Edit Review  - Review text box allows text input and required field active. 
+* Edit Review - Hot or not Chilli rating works as expected and returns correct chilli rating value on each review. required field active 
+* Edit Review - Ammend button uses post method and allows data to be input to mongoDB. required field active. 
+* Edit Review - cancel button successfully cancels edit operation and returns user to home. 
+
+**Review / Delete Review.**
+
+* Delete Review  -  Successfully deletes a users review from the database / cross referenced by checking mongoDB for successful deletion. 
+
+**Register.**
+
+* Register - Takes two inputs to the form Username and Password both utilising defensive design, required attributes and must conform to ` pattern="^[a-zA-Z0-9]{5,15}$" ` 
+* Register - button successfully registers user to the database under the database **_apollo_review-users_** 
+
+* Login - already a member login href, redirects user to login page.
+
+
+**login.**
+
+* login - Takes two inputs to the form Username and Password both utilising defensive design, required attributes and must conform to ` pattern="^[a-zA-Z0-9]{5,15}$" ` 
+* login - button successfully logs in the user and creates the session cookie in the browser.
+
+* register - no account, redirects user to registration page.
+
+
+**Screen size testing**
+
+![Screen Size and Resolution](static/img/screens.png)
+
+As displayed, i used the Responsive Viewer Chrome plugin to test a multitude of the most popular screen sizes available. Which included.
+
+* Medium Screen - 1024x800 
+* Large Screen -  1280x800
+* iPhone 8,7,6S,6 - 375x667
+* iPhone 8 Plus, 7 Plus, 6S plus - 414x736
+* Galaxy S9 Plus, S8 Plus - 412x846
+* Pixel 3, 3 XL - 393x786
+* Galaxy S9, Note 8, S8 - 360x 740
+* iPhone XS, X - 375x812
+* iPhone XR, XS MAX - 414x896
+
+
+___
+
+# Carry out tests at end! and expand this section.
+
+### **Further Testing:**
+* The use of validation services for **[Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)** and **[HTML Validator](https://validator.w3.org/)** allowed me to modify and fix any errors in my code, 
+
+### **Results from CSS and HTML validation:** 
+No errors found, i did use the direct input to the CSS validator service as i am using external frameworks such as Bootstrap and MDBOOTSTRAP which did return some warning errors when using the URL input. However these are out of my control so opting for direct input of my CSS allowed me to test my code only. 
+
+
+
+### **Other Testing criteria:**
+
+
+* I Used the Gitpod built in html testing.
+I should also add that this tool brought to my attention that as i was using multiple forms on pages that my ID's needed to be unique, an issue which was quickly rectified but easily overlooked. 
+what i do like about this tool is that it even tells you what line to look at for the aformentioned error.
+
+
+* Emmet is also a great testing tool as if you do get errors or unclosed tags it will suggest to you the closing tag to use. I find this very helpful in bug fixing and testing.
+
+* I finally used **[GTMETRIX](https://gtmetrix.com/)** which is used to test page website speeds. All testing came back fine apart from image sizes which scored pretty low. Thus i used the free online **[SQUOOSH](https://squoosh.app/)** to reduce massive image sizes upto 80% of their original file size. This is especially important as large image sizes dramatically increase page loading speeds and leads to a bad UX especially on mobile where heavy loading sites can eat data very quickly. 
+
+___
+### **Testing Issues / known bugs:**
+
+**_Custom Fonts not loading correctly on mobile when deployed to heroku._** 
+
+ I discovered this bug when i accessed the flask app on my mobile to test a different function, this will have to be explored as the custom font used (Lakeshore brush) doesnt show up on mobile versions of the application, however do when published to github pages, so the error resides in Heroku.
+
+
+ ## 🏭️ **Deployment:**
+ ___
+
+This project was developed using the Gitpod IDE which integrates seemlessly with Github, Git pod is a cloud IDE so this allowed me to work at home on my imac or out on my imac using only an internet connection and the website **[GITPOD workspaces](https://gitpod.io/workspaces/).** 
+
+The site was developed inside of the Gitpod IDE and connected to my GitHub repository. 
+As sections of the site were completed i ensured that i used version control to maintain copies of my code on the repository. This was achieved via commands on the terminal integrated with Gitpod.
+
+### **Steps in using version control and getting ready for Deployment**
+
+1. `git status` - would give me a list of the files which have been edited and ready for staging.
+1. `git add .` - I used this command to add **all** files to the staging area instead of adding each file individually i used the `.` after `Git add` which allowed all files to be added at once, i found this workflow quicker and easier.
+1. `git commit -m"Message"` - This is the command to commit the changes and the message allowed me to know what or significant changes had been made.
+1. `git push` - Was used to push to the remote repository in this case **GitHub**
+
+When working it was also neccessary to view the changes to the website, for this i mainly used preview, as the save function allowed instant refreshes and updates reflecting my changes. However for fullscreen testing in a separate tab i employed the use of the command `python3 app.py"` to open a port on my local machine, instructions were to make the port public then open in browser. 
+
+## Deployment to Heroku 
+
+This project is connected to Heroku using automatic deployment through connection to my github repository, this was achieved through the following steps. 
+
+1. Firstly and foremost one should create a new repository over at github creating an env.py file in order to store sensitive data .
+
+2. We must create two initial files in addition to this in our preparation these include the requirements.txt and Procfile, Requirements.txt essentially tells Heroku which dependencies are needed to build the app and the Procfile specifies the commands that are executed by the app on startup. 
+
+3. In order to create the requirements.txt  and **P**rocfile we will use the commands as follows; 
+
+    • $ pip3 freeze --local > requirements.txt
+    • $ echo web: python app.py > Procfile 
+
+     > **Note:**  Procfile music be capitalized !!!
+
+4. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
+
+
+![new app ](static/img//deploy/heroku/1.png)
+
+* Name your app something unique and select the region closest to you, in my case this is Europe.
+![New app](static/img//deploy/heroku/2.png)
+
+
+5.Connect up Github for automatic deployment - from the Deploy tab select Github from deployment method.
+
+![Github](static/img//deploy/heroku/3.png)
+
+6. On the Github connect section ensure that your gihtub profile is visible then on the right hand side box, type in a repo from github to search for. Preferably it is advised that you keep uniformity within heroku and github so try to keep the same names for each. For this example i have used apollo.
+
+![Repo](static/img//deploy/heroku/4.png)
+
+7. Once connected head over to the settings tab on Heroku and click on the reveal config Vars buttong as shown below 
+
+![Config vars](static/img//deploy/heroku/5.png)
+
+8. We use config vars in order to input our sensitive data and store it on heroku so heroku has access to these values, as they are the same values contained in the env.py file which isnt uploaded to github. 
+
+the variables required are as follows (key and value pairs) and are to be input exactly like your env.py file.
+
+-  IP 
+-  PORT 
+-  SECRET_KEY
+-  MONGO_URI 
+-  MONGO_DBNAME
+
+9. Once this step has been successfully completed we can then push our requirements and Procfile to github using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
+
+` git commit -m"added requirements and Procfile" ` 
+
+then push to github using `git push` command in the terminal.
+
+10. Head over teo the Deployment tab on Hero and under Automatic deploys  click Enable Automatic Deploys' and then Deploy Branch See below. 
+
+![Auto Deploy](static/img//deploy/heroku/6.png)
+
+11. Following these steps correctly will allow Heroku to recieve code from your Gihub repo and build the flask app using the correct packages and dependencies. 
+
+12. Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
