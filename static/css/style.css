@@ -7,8 +7,8 @@
 
 @font-face {
     font-family: 'lakeshoreregular';
-    src: url('https://danielboots.github.io/apollo/static/fonts/lakeshore-regular.woff2') format('woff2'),
-         url('https://danielboots.github.io/apollo/static/fonts/lakeshore-regular.woff') format('woff');
+    src: url('https://danielboots.github.io/apollo/.fonts/lakeshore-regular.woff2') format('woff2'),
+         url('https://danielboots.github.io/apollo/.fonts/lakeshore-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
