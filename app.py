@@ -203,6 +203,13 @@ def view_review(review_id):
     return render_template("view_review.html", review=review)
 
 
+# Addition of 404 page function - From Flask Docs:
+# Code from 'https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/'
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
