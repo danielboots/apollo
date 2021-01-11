@@ -680,11 +680,17 @@ This project is connected to Heroku using automatic deployment through connectio
 
 the variables required are as follows (key and value pairs) and are to be input exactly like your env.py file.
 
--  IP 
--  PORT 
--  SECRET_KEY
--  MONGO_URI 
--  MONGO_DBNAME
+
+| KEY      | VALUE     | 
+| :------------- | :----------: |  
+|  **IP** | USER SPECIFIED   | 
+| **PORT**  | USER SPECIFIED | 
+| **SECRET_KEY**   | USER SPECIFIED - i use randomkeygen.com | 
+| **MONGO_URI**    | MongoURI | 
+| **MONGO_DBNAME**   | Your MongoDB Database name. | 
+
+
+
 
 9. Once this step has been successfully completed we can then push our requirements and Procfile to github using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
 
