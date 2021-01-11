@@ -256,11 +256,11 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 
 | Needs / Goals       | Task        | 
 | ------------- |:-------------:| -----:|
-| **1.     An easy to use music review site_**       | Make sure the site is easy to learn and easy to navigate | 
-| **2.     Display each review on their own page_**      | Create the route app decorator to grab the ID of the review and use a template to generate the page pulling data of the review in from MongoDB       |  
-| **3.     Discover new music and artists _** | Allow further search functionality alongside adding charts for top rated reviews and users, this will encourage use of the site more frequently.      |    
-| **4.     CRUD functionality _** | Give access to features allowing the user to Create, update and delete their reviews with out the need for an administrator      |    
-| **5.     Exploration of the site _** |   Group reviews to categories, employ the use of carousels for swiping of reviews, or categorise by rating / genre    |    
+| **1.     _An easy to use music review site_**       | Make sure the site is easy to learn and easy to navigate | 
+| **2.     _Display each review on their own page_**      | Create the route app decorator to grab the ID of the review and use a template to generate the page pulling data of the review in from MongoDB       |  
+| **3.     _Discover new music and artists_** | Allow further search functionality alongside adding charts for top rated reviews and users, this will encourage use of the site more frequently.      |    
+| **4.     _CRUD functionality_** | Give access to features allowing the user to Create, update and delete their reviews with out the need for an administrator      |    
+| **5.     _Exploration of the site_** |   Group reviews to categories, employ the use of carousels for swiping of reviews, or categorise by rating / genre    |    
 
 
 #### **Site Owner**
@@ -658,23 +658,23 @@ This project is connected to Heroku using automatic deployment through connectio
 4. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
 
 
-![new app ](static/img//deploy/heroku/1.png)
+![new app ](static/img/deploy/heroku/1.png)
 
 * Name your app something unique and select the region closest to you, in my case this is Europe.
-![New app](static/img//deploy/heroku/2.png)
+![New app](static/img/deploy/heroku/2.png)
 
 
 5.Connect up Github for automatic deployment - from the Deploy tab select Github from deployment method.
 
-![Github](static/img//deploy/heroku/3.png)
+![Github](static/img/deploy/heroku/3.png)
 
 6. On the Github connect section ensure that your gihtub profile is visible then on the right hand side box, type in a repo from github to search for. Preferably it is advised that you keep uniformity within heroku and github so try to keep the same names for each. For this example i have used apollo.
 
-![Repo](static/img//deploy/heroku/4.png)
+![Repo](static/img/deploy/heroku/4.png)
 
 7. Once connected head over to the settings tab on Heroku and click on the reveal config Vars buttong as shown below 
 
-![Config vars](static/img//deploy/heroku/5.png)
+![Config vars](static/img/deploy/heroku/5.png)
 
 8. We use config vars in order to input our sensitive data and store it on heroku so heroku has access to these values, as they are the same values contained in the env.py file which isnt uploaded to github. 
 
@@ -699,3 +699,117 @@ then push to github using `git push` command in the terminal.
 11. Following these steps correctly will allow Heroku to recieve code from your Gihub repo and build the flask app using the correct packages and dependencies. 
 
 12. Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
+
+
+
+
+### **How to clone or run this project natively using HTTPS.**
+If you should require to fork or obtain a copy of this website you can follow these instructions. 
+
+1. Visit my Github repo here **[Apollo Repo](https://github.com/danielboots/apollo):**
+
+
+2. Click on the GREEN clone or download button, located at the top right of the page see screenshot below.
+
+   
+     ![Repo Clone step](static/img/deploy/github/4.png)
+
+3. Click on the "clipboard" also located on the right now seen as a dropbown box. You can either click the clipboard or the URL, if using URL method remember to right click highlighted URL and copy.
+4. Open your IDE and open a new terminal window.
+5. Change the directory path to a location in which you want to clone the repo too. 
+6. Paste the Git URL and click ok / Clone etc. 
+
+
+ ### Additional steps required in order to allow the Flask app to work. 
+
+### Create the env.py file
+
+1. in the root directory create a env.py file to store your custom environment variables as follows.
+- Import os 
+   - os.environ.setdefault("IP", "user specific") 
+   - os.environ.setdefault("PORT", "user specific") 
+   - os.environ.setdefault("SECRET_KEY", "user specific") 
+   - os.environ.setdefault("MONGO_URI", "user specific") 
+   - os.environ.setdefault("MONGO_DBNAME", "user specific")
+
+> **Note:** For this project i used MongoDB for the backend noSQL database, if you want to clone this repo and allow for a functioning app you will need to set up an account over at MongoDB, instructions on using this 3rd party service can be found on their website. 
+
+#### **Deploy the site to Github Pages.**
+Follow these steps in order to then launch the project using Github pages to be viewed live on the web.
+
+1. Enter the _MPS Repository_ from the Github Dashboard.
+
+     ![Repos](static/img/deploy/github/1.png)
+
+
+2. Click on the settings tab.
+
+    ![GitHub Pages](static/img/deploy/github/2.png)
+
+3. Scroll right to the bottom of the page options where you will find the "**GitHub Pages**" Options.
+
+   ![GitHub Pages](static/img/deploy/github/3.png))
+
+From the "Source" option, chose "Master Branch" from the presented options.
+The page will refresh and you will receive a notification saying. " _**Your site is published at: [https://danielboots.github.io/apollo/](https://danielboots.github.io/apollo/)**_"
+
+
+
+
+
+___
+
+
+
+## 🤝 **Credits Acknowledgements and References.**
+___
+
+### **Content**
+The content for the website was taken from an old version of https://hydrasound.com my own business website which one of the features was in part rebuilt for this project in this case the reviews section.
+
+
+### **Media - images** 
+Over the course of my project i used various sources for media - 
+
+* **All other Media images** -  From my own website - which was located at https://hydrasound.com 
+* original content for these logos came from **Pexels**, **Envato Elements** and **https://Hydrasound.com**
+
+### **Code Snippets** 
+
+
+* **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/
+* **Forms** - MDBootstrap - https://mdbootstrap.com/docs/jquery/forms/basic/
+* **Cards** - MDBootstrap - https://mdbootstrap.com/docs/jquery/components/cards/
+
+### **Tutorials** 
+The initial code for this flask application was built heavily around the flask app tutorial from code institute modules, as part of my full stack web developer course, i could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which i followed and adapted to my own needs. 
+
+* Custom 404 error page - https://htmldog.com/techniques/404/
+
+### **Animation Css External Libraries** 
+
+* **Animation Hero text** - Animista library - https://animista.net/play/text/focus-in/text-focus-in
+
+### **Additional** 
+* **Code Institute Projects** - Previous projects were referenced when needing to job memory on **HTML** structure or some **css** classes.
+* **[Gitpod Emoji Code 0.9.0](https://github.com/idleberg/vscode-emoji-code#readme):** - Allows emoji use in markdown. 
+* **[FavIcon- Instructions](https://www.youtube.com/watch?v=pA8103S-yqk):** - Allowed me to add a FavIcon to my site.
+* **[FavIcon- Converter](https://www.icoconverter.com/):** - Allowed me to Convert my 16x16px photoshop image to a .ico file.
+
+
+### **Thanks** 
+
+I would like to thank once again my mentor Allen for his continued support and general guidance and chats we have not only about project specific but moving forward, i like to ask him questions about future proofing myself to which he happily gives me so much good advice on, not only that but also telling me about the chrome plugin Responsive Viewer, which saves so much time!! Thanks Allen.
+
+I appreciate his time going through the code institute handbook with me and ensuring that we covered all criteria and to both of our satisfaction.
+
+Also my fiance and my family and children, again, as i progress through this course, my daughter is now 7 months and teething, so im running on zero sleep but im doing this in turn for my family and one day ill look back at this repo / project and smile! 
+
+To anyone else, you know who you are. 
+
+
+### **Contact**
+
+If you have enjoyed using this project or wish to connect with me my direct email is: 
+Dan@musicproductionservice.com
+Thanks for passing by! 
