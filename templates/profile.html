@@ -15,4 +15,125 @@
     </div>
 </div>
 
-{% endblock %}
+   <div class="container-fluid">
+    <div class="container-max">
+       <div class="row">
+{% if reviews|length > 0 %}
+
+<!-- Card container for reviews. Clean up, instead of accordion.-->
+
+
+        
+            {% for reviews in reviews %}
+
+         
+
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center spacer ">
+
+                <!-- Card Narrower -->
+                <div class="card">
+
+                    <!-- Card image -->
+                    <div class="">
+                        <img class="card-img-top" src="{{ reviews.artwork }}" alt="Placeholder image">
+                        
+                            <div class="mask rgba-white-slight"></div>
+                
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+
+                       
+                        
+                        <!-- Title -->
+                        <h5 class="card-title "> <strong>Artist Name: </strong> {{ reviews.artist_name }} </h5>
+                        <h5 class="card-title "> <strong>Album title:</strong>  {{ reviews.album_title }} </h5>
+                        <h5 class="card-title "> <strong>Track title:</strong>  {{ reviews.track_title }} </h5>
+                        <!-- Text -->
+                        <h6 class="deep-purple-text pb-2 pt-1"><i class="fas fa-book-open"></i> {{ reviews.genre }}</h6>
+                        <h5 class="card-title deep-purple-text" > <strong> <em>Chilli Rating</em> </strong> </h5>
+
+                        <!-- Working now using string instead of Boolean. -->
+                        {% if reviews.hot_not == "1" %}
+                        <i class="fas fa-pepper-hot red-text "></i>
+                        <h6 class="red-text">Mild Tingle</h6>
+                        {% elif reviews.hot_not == "2" %}
+                        <i class="fas fa-pepper-hot red-text "></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <h6 class="red-text">Hey We getting hotter</h6>
+                        {% elif reviews.hot_not == "3" %}
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <h6 class="red-text">Scorching</h6>
+                        {% elif reviews.hot_not == "4" %}
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                       <h6 class="red-text">Firecracker</h6>
+                        {% elif reviews.hot_not == "5" %}
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <i class="fas fa-pepper-hot red-text"></i>
+                        <h6 class="red-text">To Hot to handle</h6>
+                        {% endif %}
+                        <div class="col text-center btn-spacer">
+
+
+                            
+
+
+                        </div>
+                        <div class="row">
+<div class="col">
+
+    <a href="{{ url_for('view_review', review_id=reviews._id) }}" class="btn btn-dark pill-btn">Read More</a>
+</div>
+
+                        </div>
+
+                        <!-- Card footer -->
+                        <div class="col">
+                        <div class="card-footer text-muted text-center">
+                            <strong>Review by:</strong>  {{ reviews.created_by }}
+                        </div>
+                        </div>
+
+
+                        
+                    {% if session.user|lower == reviews.created_by|lower %}
+                            <i class="fas fa-user-edit"></i>
+                            <a href="{{ url_for('edit_review', review_id=reviews._id) }}" class="btn btn-sm btn-dark">Edit</a>
+                            <a href="{{ url_for('delete_review', review_id=reviews._id) }}"
+                                class="btn btn-sm btn-dark">DELETE</a>
+                            {% endif %}
+                    </div>
+  
+    </div>
+    
+
+                    </div>
+                    <!-- Card Narrower -->
+                    {% endfor %}
+                    
+
+
+
+              </div>
+            </div>
+</div>
+ 
+</div>
+<!-- Accordion wrapper -->
+{% else %}
+<h2 class="text-center">Reviews: This is strange, we dont seem to have what you are looking for. Why not register and add a new review! </h2>
+{% endif %}
+
+
+
+    {% endblock %}
+
