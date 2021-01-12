@@ -93,7 +93,10 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        reviews = list
+        #line below written by Allen Varghese - mentor.
+        (mongo.db.reviews.find({"created_by": {"$eq": session["user"]}}))
+        return render_template("profile.html", username=username, reviews=reviews)
 
     return redirect(url_for("login"))
 
