@@ -19,7 +19,7 @@
 </div>
 
 
-{% for reviews in reviews %}
+{% for review in reviews %}
 
          
 
@@ -35,7 +35,7 @@
                             <div class="mask rgba-white-slight"></div>
                 
                     </div>
-
+                </div>
                     <!-- Card content -->
                     <div class="card-body card-body-cascade">
 
@@ -89,6 +89,8 @@
     <a href="{{ url_for('view_review', review_id=reviews._id) }}" class="btn btn-dark pill-btn">Read More</a>
 </div>
 
+
+
                         </div>
 
                         <!-- Card footer -->
@@ -111,18 +113,14 @@
     </div>
     
 
-                    </div>
+                 
                     <!-- Card Narrower -->
                     {% endfor %}
                     
 
 
 
-              </div>
-            </div>
-</div>
- 
-</div>
+           
 
 
 

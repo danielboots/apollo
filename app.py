@@ -68,10 +68,10 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                             request.form.get("username")))
-                        return redirect(url_for(
+                return redirect(url_for(
                             "profile", username=session["user"]))
             else:
                 # invalid password match
@@ -94,7 +94,6 @@ def profile(username):
 
     if session["user"]:
         reviews = list
-        #line below written by Allen Varghese - mentor.
         (mongo.db.reviews.find({"created_by": {"$eq": session["user"]}}))
         return render_template("profile.html", username=username, reviews=reviews)
 
