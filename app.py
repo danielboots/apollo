@@ -94,13 +94,6 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-<<<<<<< HEAD
-        reviews = list
-        #line below written by Allen Varghese - mentor.
-        (mongo.db.reviews.find({"created_by": {"$eq": session["user"]}}))
-        return render_template("profile.html", username=username, reviews=reviews)
-=======
->>>>>>> parent of ea98d8a (added profile review functionality, allowing users to manage their own reviews on profile.html page instead of reviews.html)
 
     return redirect(url_for("login"))
 
