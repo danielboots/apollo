@@ -63,7 +63,12 @@ ___
 
 * **[AM I RESPONSIVE](http://ami.responsivedesign.is/):** - Used to generate the header image displayed at top of Readme.md file depicting 4 screen displays.
 
+* **[CSS Beautifier](https://www.freeformatter.com/css-beautifier.html):** - Formats a CSS files with the chosen indentation level for optimal readability. Supports 4 indentation levels: 2 spaces, 3 spaces, 4 spaces and tabs.
 
+* **[HTML Formatter](https://www.freeformatter.com/html-formatter.html):** - Formats a HTML string/file with your desired indentation level. The formatting rules are not configurable but are already optimized for the best possible output.
+
+* **[PEP8 Compliance checker](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
+ 
 
 ___
 
@@ -352,8 +357,9 @@ ___
 
 
 #### **Wireframes.**
-![Wireframes.pdf](static/media/wireframing/MS3wireframes.pdf/)
+* I have included the wireframes as a separate .pdf file as there are 7 pages, so instead of cluttering up this readme, feel free to download or view on Github using the link below.
 
+![Wireframes.pdf](static/media/wireframing/MS3wireframes.pdf)
 
 
 
