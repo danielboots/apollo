@@ -78,6 +78,11 @@ body {
 }
 
 
+
+.modal-dark-text {
+    color: black;
+}
+
 /* Animation text taken from Milstone 2 project, i like the fade in hero text effect so reusing it. */
 
 

@@ -43,19 +43,25 @@
 				<!-- Nav Links -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('get_reviews')}}">Home</a></li>
+                    <!-- Button trigger modal -->
+                    <li class="nav-item"><a class="nav-link font-weight-bolder" data-toggle="modal" data-target="#fullHeightModalRight">About</a></li>
+
                 {% if session.user|lower %}
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('add_review')}}">Add Review</a></li>
 
                     {% if session.user|lower == "admin"|lower %}
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('get_genres')}}">Genres</a></li>
-                    {% endif %}
+                    {% endif %} 
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('logout')}}">Log Out</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('login')}}">Log In</a></li>
                     <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('register')}}">Register</a></li>
+                    
+                    
                 {% endif %}
                 </ul>
+                
 			</div>
 		</nav>
 		<!-- End /.Navbar-->
@@ -64,7 +70,52 @@
 
 			<div class="hero-text">
 				<h1 class="text-focus-in rotate">Apollo</h1>
-				<h5 class="focus-in-contract-bck">Music Reviews with a fiery twist!</h5>
+                <h5 class="focus-in-contract-bck">Music Reviews with a fiery twist!</h5>
+<!-- Full Height Modal Right -->
+<div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h4 class="modal-title w-100 modal-dark-text" id="myModalLabel">About Apollo - Music Review</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-dark-text">
+       <p class="justify-content"> Apollo Review is a Music only site where you can read, or sign up to add your own music reviews to our ever growing database.</p>
+<h6 class="modal-title w-100 modal-dark-text text-left"> If you dont have an account you can sign up here: <a href="{{ url_for('register')}}"> register</a> </h6>
+
+<h6 class="modal-title w-100 modal-dark-text text-left" > Login here: <a href="{{ url_for('login')}}"> login</a> </h6>
+
+<h5 class="modal-title w-100 modal-dark-text text-left" > Account features:</h5>
+<p class="justify-content">When you sign up for an account you can</p>
+<ul class="text-left">
+<li>Add Reviews </li>
+<li>Edit Reviews </li>
+<li>Delete Reviews </li>
+<li>Build up a Review Portfolio to show magazines </li>
+<li>Review your favourite artists and bands, increasing theirs and your exposure. </li>
+</ul>
+
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://apollo-music-review.herokuapp.com/"> Apollo Music Review - Get your music heard!</a>
+    <p> Questions? <a href="mailto:dan@musicproductionservice.com"><strong>Contact me</strong> </a></p>
+  </div>
+
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-dark pill-btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Full Height Modal Right -->
+
 			
 			</div> 
 		</div>
@@ -104,8 +155,10 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#"> Apollo Music Review - Get your music heard!</a>
+    <a href="https://apollo-music-review.herokuapp.com/"> Apollo Music Review - Get your music heard!</a>
+    <p> Questions? <a href="mailto:dan@musicproductionservice.com"><strong>Contact me</strong> </a></p>
   </div>
+  
   <!-- Copyright -->
 
 </footer>
