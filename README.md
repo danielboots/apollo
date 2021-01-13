@@ -26,7 +26,7 @@ ___
 
 * **[HEROKU](https://www.heroku.com/):** - Heroku is a container-based cloud Platform as a Service (PaaS). Used in this project to deploy live site to the web.
 
-* **[PYTHON](https://www.python.org/):** - Python is a backend programming language
+* **[PYTHON](https://www.python.org/):** - Python is a backend programming language used for the CRUD functionality of this application.
 
 * **[MONGODB](https://www.mongodb.com/):** - MongoDB is a NoSQL database, based on JSON format, using key value pairs to store data in clusters / collections, which can be retrieved via Python.
 
@@ -35,8 +35,6 @@ ___
 * **[RANDOMKEYGEN](https://randomkeygen.com/):** - Website used to generate secure passwords, used in this application for ***SECRET_KEY***.
 
 * **[JAVASCRIPT](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** - *As part of Bootstrap* Javascript although i havent programmed it, was included in the site as part of the Bootstrap framework so that some Bootstrap components such as the navigation toggler would work.
-
-* **[JQUERY](https://jquery.com/):** - *Extensive parts of the web application are programmed in jquery, click event listeners on page loads and loading of the users data all employ the use of jQuery.*
 
 * **[BOOTSTRAP](https://getbootstrap.com/):** - The framework for the site allowing use of the Bootstrap grid and responsive mobile first approach. I Used many components from Bootstrap mainly, the Carousel, Nav bar, forms and modals. 
 * **[MDBOOTSTRAP](https://mdbootstrap.com/):** - The framework based on Google Material Design for Bootstrap. 
@@ -321,7 +319,7 @@ The menu items are only one level consisting of a linear structure, so no nested
 * Finally logout for users to end their session and securely logout from the application, removing the session cookie. 
 
 
-### **Information on structure regarding page layout and design.:**
+### **Information on structure regarding page layout and design :**
  The general structure of pages will consist of a nav bar, a hero section and then relative content to that page, structured using the projects fonts, font sizing and colour palette.
 * As discussed earlier I have opted for a content block approach which will allow me to display content in a clean and structured manner. These two points allow the user to learn the layout and feel of the website quickly.
 * Each page will have working navigation whereby the Apollo **A** Logo will return the user to the home or landing page.
@@ -353,12 +351,9 @@ _**Please note – these wireframes may difer slightly from the end result.**_
 ___
 
 
-#### **Index Page - Wireframe.**
-![Wireframing-index.html](static/img/wireframe/)
+#### **Wireframes.**
+![Wireframes.pdf](static/media/wireframing/MS3wireframes.pdf/)
 
-
-#### **USERS - Wireframe.**
-![Wireframing-review](static/img/wireframe/)
 
 
 
