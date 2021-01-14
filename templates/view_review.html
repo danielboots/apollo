@@ -56,14 +56,14 @@
         <p class="review-spacer text-justify text-center">{{ review.review }}</p>
 
 
-
+    
 <div class="col text-center">
     <h2> Listen </h2>
 <iframe src="{{ review.youtube }}" width="80%" height="380" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
         <h5 class="text-center"><strong>Review by:</strong> {{ review.created_by }} </h5>
 
-
+</div>
 
 
      <a href="{{ url_for('get_reviews') }}" class="btn btn-dark pill-btn text-center">More Reviews</a>
