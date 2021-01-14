@@ -436,11 +436,14 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Search bar with full function index search - all search strings were incorporated in to the search functionality including: artist_name_text_track_title_text_album_title_text_genre_text_review_text_created_by_text, this is to ensure that all possible text strings associated with the reviews including review genre would return results. Conversely i havent at this stage included a rating search, as this project is ongoing and will be implemented at a later date once charts and other user functionality are developed. 
 
+* Youtube Embed - Allows the user to input the youtube embed url to the database and display the youtube video on the review page. Giving the reader the chance to not only read the review but listen to media. 
+
+* Defensive design - After failing to integrate sufficient defensive design into my previous project i made sure that this project was 'Rock Solid' from using fort knox level SECRET_KEY's to setting required attributes to all form elements, and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed i implemented this code ` pattern="https://.*" required `  to ensure that only SSL http connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
 
 
 ### **Further Dev plans**: 
 
-> Ongoing project notice: 
+> **Ongoing project notice:** 
 
 * I feel this project satifies the criteria set out to which i wanted to achieve however i have further plans to branch this project in order to create a better experience again for users and readers of the site to which may include: 
 
@@ -633,13 +636,33 @@ As displayed, i used the Responsive Viewer Chrome plugin to test a multitude of 
 
 ___
 
-# Carry out tests at end! and expand this section.
-
 ### **Further Testing:**
 * The use of validation services for **[Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)** and **[HTML Validator](https://validator.w3.org/)** allowed me to modify and fix any errors in my code, 
 
+
 ### **Results from CSS and HTML validation:** 
 No errors found, i did use the direct input to the CSS validator service as i am using external frameworks such as Bootstrap and MDBOOTSTRAP which did return some warning errors when using the URL input. However these are out of my control so opting for direct input of my CSS allowed me to test my code only. 
+
+### **CSS Results:** 
+
+* CSS testing found only errors withing the MDBootstrap CSS - all written css passed validation, apart from webkit-animation and webkit-filter which is an external library i used for  H1 animations and out of my control. 
+
+![CSS testing](static/img/css_testing.png)
+
+
+### **PEP8 Results:** 
+No problems resulting from PEP8 testing and compliance of app.py file using http://pep8online.com/
+apart from 2 lines being too long, however all major tests passed and no errors and indentation all correct.
+
+![PEP8 testing](static/img/pep8.png)
+
+
+
+### **HTML Results:** 
+All HTML pages validated and passed tests however using Flask and the way we extend from the base template we do see expected errors in each page such as Doctype must be declared first and special character escaping, however this cant be circumvented and i am aware and happy to proceed with this. 
+
+![HTML Validation](static/img/html.png)
+
 
 
 
@@ -856,6 +879,17 @@ Over the course of my project i used various sources for media -
 The initial code for this flask application was built heavily around the flask app tutorial from code institute modules, as part of my full stack web developer course, i could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which i followed and adapted to my own needs. 
 
 * Custom 404 error page - https://htmldog.com/techniques/404/
+
+### **Custom Code** 
+
+
+* **Profile extended to display users own reviews** - My mentor Allen Varghese helped me with this section and provided the code 
+
+` {"created_by": {"$eq": session["user"]}}
+` 
+
+Which subsequenlty allowed me to display all of the users reviews on their own profile page which i think is a great way for users to see and manage their own content. 
+
 
 ### **Animation Css External Libraries** 
 
