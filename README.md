@@ -63,11 +63,11 @@ ___
 
 * **[AM I RESPONSIVE](http://ami.responsivedesign.is/):** - Used to generate the header image displayed at top of Readme.md file depicting 4 screen displays.
 
-* **[CSS Beautifier](https://www.freeformatter.com/css-beautifier.html):** - Formats a CSS files with the chosen indentation level for optimal readability. Supports 4 indentation levels: 2 spaces, 3 spaces, 4 spaces and tabs.
+* **[CSS BEAUTIFIER](https://www.freeformatter.com/css-beautifier.html):** - Formats a CSS files with the chosen indentation level for optimal readability. Supports 4 indentation levels: 2 spaces, 3 spaces, 4 spaces and tabs.
 
-* **[HTML Formatter](https://www.freeformatter.com/html-formatter.html):** - Formats a HTML string/file with your desired indentation level. The formatting rules are not configurable but are already optimized for the best possible output.
+* **[HTML FORMATTER](https://www.freeformatter.com/html-formatter.html):** - Formats a HTML string/file with your desired indentation level. The formatting rules are not configurable but are already optimized for the best possible output.
 
-* **[PEP8 Compliance checker](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
+* **[PEP8 COMPLIANCE CHECKER](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
  
 
 ___
@@ -420,12 +420,53 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Flash messages are employed to allow / alert the user if they have logged in, logged out, submitted a review to the site correctly etc.
 
+* User registration with login and log out functionality - This function was added albeit not essential for the project development / criteria, however i added this extra functionality to showcase a strategy for encouraging users to return to the site, by having their own registration on the site will be more appealing for return visits. 
+
+* CRUD functionality for registered users: Allowing users to fully control the content they submit to the site allows for return and frequent visits, not only that but it encourages social sharing of their content. 
+
+* Allowing 3rd party content creation - through user accounts we allow for 3rd party content to be created, not just from the site owner. This will allow for exponential growth to the site, in turn increasing traffic and allowing for better SEO results. 
+
+* Mobile Responsive - This site has been tested to ensure that a mobile first approach and layout is clean and effective, the delivery of content and readability on smaller devices was paramount. This was achieved by the use of the Bootstrap Grid system and custom CSS media queries allowing for content to be resized on smaller screens and thus utilising optimum screen real estate on smaller devices, all information is grouped and presented in an expected way, aiding in ease of 'learning' for new and return users. 
+
+* Buttons have been used extensively in order to allow for easy navigation when scrolling, as the nav bar isnt sticky and resides at the top of the screen, the use of buttons to return the user to the home sections or read more, edit reviews and delete are all important in ease of use for the end user. 
+
+* 404.html - This was not needed as part of this project however i did when testing my URLs mistype a few by accident, which returned server errors as expected, so i did a google search on how to implement a 404 page which will allow users to safely navigate back to the home page if they end up on a page which isnt expected or not found. This has been credited below however i feel this was a great addition to the site outside of the scope of the project but adds alot of value to the site owner and end user. I added a return to home button and incorporated the Nav bar so that even if the user finds themselves lost they can easily return home or use the navigation bar to find what they were looking for, instead of using the back button or having to retype the address and refreshing the application. 
+
+* Modals - I incorporated a modal into the nav bar with the title ABOUT - which allowed me without creating a new page a fly out modal, to give quick tips on how to use the site including links for users who are just visiting and dont have an account, they may register or login. Also there is an href mailto: my own personal email if they wish to contact me directly. I May opt for a contact form in future however this is not needed for this project, as we are primarily focused on DATA. 
+
+* Search bar with full function index search - all search strings were incorporated in to the search functionality including: artist_name_text_track_title_text_album_title_text_genre_text_review_text_created_by_text, this is to ensure that all possible text strings associated with the reviews including review genre would return results. Conversely i havent at this stage included a rating search, as this project is ongoing and will be implemented at a later date once charts and other user functionality are developed. 
+
+
+
+### **Further Dev plans**: 
+
+> Ongoing project notice: 
+
+* I feel this project satifies the criteria set out to which i wanted to achieve however i have further plans to branch this project in order to create a better experience again for users and readers of the site to which may include: 
+
+
+* Music charts - A rating system which can be developed from the original system i have in place but instead of user ratings - allow for readers of the review to rate the review and track, which will then give an average score which i can then use to generate python based charts and leaderboards. 
+
+* User discussion forums may be of use so users can interact with one an other or similar simple social network type functionality where users can add friends or follow reviews who they enjoy reading their reviews, or have similar interests. This will create a community. 
+
+* Extend the review functionality to incorporate links to the music, such as Youtube embeds, spotify follow buttons etc. This would be essential if i were to launch this as a viable business opportunity for an end owner of the site. 
+
+* Change the URL input for artowrk to an upload form - this would allow users to directly upload their own artwork instead of sourcing or potentially hot linking from other sites. 
+
+* Extending the registration process to include email address in sign up - this will allow me to (GDPR allowing) create an email database of registered users and to contact them when needed. 
+
+* Categories - As the site grows there should be a significant extention of site layout to incorporate growth, this may be grouping reviews by categories such as by genre and displaying only top reviews on the home page in a carousel and linking to a separate genre specific page, this will help in allowing readers to find and explore music they are interested in only. 
+
+
+* Advertising space - revenue generation or sponsored reviews - allowing fund generation for the site in return for better site positioning or exposure. 
 
 
 ### **_Code Refactoring_:** 
 ___
 In this project i also used the extension to Gitpod called prettier which would format my code, however i then went through each page 
 and ensured there were no excess lines of whitespace. I also chose a uniformed way of commenting display, whereby i left a line gap either side of my comments so that people can distinguish between code blocks. I feel it was just a neat way to format my comments. 
+
+Further more to this i used an online tool which formats my HTML and CSS to conform to best practice, so in my final (for deadline purposes) commits i will be formatting the HTML code from the formatter, as credited below.  
 
 ## 🧪 **Testing:**
 ___
@@ -482,6 +523,14 @@ Furthemore i implemented a media query after using the Repsonsive Viewer extensi
 ```
 
 * Custom font on Heroku : (add to this section) https://blog.liplex.de/custom-fonts-on-heroku/ > not working add to known bugs.
+
+* Other bugs - as present (final meeting with mentor tomorrow ) - logo only works on home page and doesnt work on any other page, leaving as a bug unless fixed tomorrow. 
+
+# Note to self to address - BUG LOGO 
+# MODAL on mobile works but takes a few presses of the menu item. 
+
+
+
 
 
 ## 🧪 **User Experience testing:**
@@ -778,6 +827,23 @@ The content for the website was taken from an old version of https://hydrasound.
 ### **Media - images** 
 Over the course of my project i used various sources for media - 
 
+#### **Reviews images for example have been directly sourced from google searches along with review txt. Examples:**
+
+* **Don Diablo Review:** ![IMG SOURCE](https://ventsmagazine.com/wp-content/uploads/2019/11/KHnZ10kw-660x330.jpeg)
+
+* https://ventsmagazine.com/wp-content/uploads/2019/11/KHnZ10kw-660x330.jpeg
+
+### **Other image media links:**
+
+* **Armin Van Buuren Review Img:** https://i.pinimg.com/originals/ef/d9/99/efd9993e6c92374ec9e2446813c87283.jpg
+* **Mark Knight Review Img:** https://m.media-amazon.com/images/I/716qJH+ws8L._SS500_.jpg
+* **Jamiroquai Review Img:** https://media.pitchfork.com/photos/5929c35b69fc7814a47cd619/1:1/w_320/856cad74.jpg
+* **Joel Corry Review Img:** https://m.media-amazon.com/images/I/91cSY6EY5mL._SS500_.jpg
+* **Luke Bond Review Img:** https://images-eu.ssl-images-amazon.com/images/I/61X0UHeNzQL._SX342_QL70_ML2_.jpg
+* **AVB Fiora Review Img:** https://m.media-amazon.com/images/I/61RCGtsceXL._SS500_.jpg
+
+
+
 * **All other Media images** -  From my own website - which was located at https://hydrasound.com 
 * original content for these logos came from **Pexels**, **Envato Elements** and **https://Hydrasound.com**
 
@@ -815,8 +881,8 @@ Also my fiance and my family and children, again, as i progress through this cou
 To anyone else, you know who you are. 
 
 
-### **Contact**
+### **Contact:**
 
-If you have enjoyed using this project or wish to connect with me my direct email is: 
-Dan@musicproductionservice.com
+> If you have enjoyed using this project or wish to connect with me my direct email is: 
+**_dan@musicproductionservice.com_**
 Thanks for passing by! 
