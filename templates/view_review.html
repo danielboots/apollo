@@ -51,14 +51,16 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col spacer"></div>
+        <div class="col spacer "></div>
 
-        <p class="review-spacer text-justify">{{ review.review }}</p>
+        <p class="review-spacer text-justify text-center">{{ review.review }}</p>
 
-<h2> Listen </h2>
 
-<a href="{{ review.spotify }}"></a>
 
+<div class="col text-center">
+    <h2> Listen </h2>
+<iframe src="{{ review.youtube }}" width="80%" height="380" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
         <h5 class="text-center"><strong>Review by:</strong> {{ review.created_by }} </h5>
 
 
