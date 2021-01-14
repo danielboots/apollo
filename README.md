@@ -522,16 +522,6 @@ Furthemore i implemented a media query after using the Repsonsive Viewer extensi
 
 ```
 
-* Custom font on Heroku : (add to this section) https://blog.liplex.de/custom-fonts-on-heroku/ > not working add to known bugs.
-
-* Other bugs - as present (final meeting with mentor tomorrow ) - logo only works on home page and doesnt work on any other page, leaving as a bug unless fixed tomorrow. 
-
-# Note to self to address - BUG LOGO 
-# MODAL on mobile works but takes a few presses of the menu item. 
-
-
-
-
 
 ## 🧪 **User Experience testing:**
 
@@ -671,6 +661,14 @@ ___
 **_Custom Fonts not loading correctly on mobile when deployed to heroku._** 
 
  I discovered this bug when i accessed the flask app on my mobile to test a different function, this will have to be explored as the custom font used (Lakeshore brush) doesnt show up on mobile versions of the application, however do when published to github pages, so the error resides in Heroku.
+
+
+ * Custom font on Heroku : (add to this section) https://blog.liplex.de/custom-fonts-on-heroku/ > not working add to known bugs.
+
+* Other bugs - as present (final meeting with mentor tomorrow ) - logo only works on home page and doesnt work on any other page, leaving as a bug unless fixed tomorrow. 
+
+# Note to self to address - BUG LOGO 
+# MODAL on mobile works but takes a few presses of the menu item. 
 
 
  ## 🏭️ **Deployment:**
