@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: 'lakeshoreregular';
-	src: url('') format('woff2'), url('') format('woff');
+	src: url('/static/fonts/lakeshore-regular.woff2') format('woff2'), url('/static/fonts/lakeshore-regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
