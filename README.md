@@ -145,7 +145,9 @@ All of the below points should fulfil 'user first impressions' (see table below)
 
 
 **What is culturally appropriate**
+
 Concerning this music review project I have found that the brand name stands for a lot right from the offset. Our website is only concerned with displaying reviews within the music industry, so no Movie reviews or fishing rod reviews.
+
 We keep the site strictly about musical endeavour and focus solely on providing the users with the ability to create their music reviews, edit and delete them. They will also be able to build up their name as a music reviewer, as I have created the 'review_by' functionality at the bottom of the review. So users can build up a database of their reviews, which can be displayed on their profile page. Furthermore, by adding them to their profile page, we allow the user the ability to manage their database of reviews, add to and review their work in their section of the site. 
 
 I have also developed the site to be mobile-first as our demographic for clients looking for our services seems to be in the male category and age range of 22-34, whereby we know its highly likely that users have access to a smartphone and will be accessing our website from mobile.
@@ -162,9 +164,9 @@ I also used a background image which is relevant (musically) to display the fiel
 
 **What is the importance of this.**
 
-From the first time the user visits the website we want to display a level of professionalism and ease of use, not only that our straplines, branding and colour palettes are correct but our content is distraction-free and displayed easily enough that a user can learn about our website and feel at ease very quickly. 
+* From the first time the user visits the website we want to display a level of professionalism and ease of use, not only that our straplines, branding and colour palettes are correct but our content is distraction-free and displayed easily enough that a user can learn about our website and feel at ease very quickly. 
 
-With minimal distractions and a simple interface, it will become easy for the user to quickly learn the site and sign up for an account and start creating content for the site. 
+* With minimal distractions and a simple interface, it will become easy for the user to quickly learn the site and sign up for an account and start creating content for the site. 
 
 **Why would a user want this.**
 
@@ -276,7 +278,7 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 
 
 
-** First-time visitor Goals**
+**First-time visitor Goals**
 
 * Allow visitors to learn that the site is a music review site
 * Home screen prompting registration if logged out. 
@@ -478,6 +480,11 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 * Search bar with full function index search - all search strings were incorporated in to the search functionality including: artist_name_text_track_title_text_album_title_text_genre_text_review_text_created_by_text, this is to ensure that all possible text strings associated with the reviews including review genre would return results. Conversely, I haven't at this stage included a rating search, as this project is ongoing and will be implemented at a later date once charts and other user functionality are developed. 
 
 * Youtube Embed - Allows the user to input the youtube embed URL to the database and display the youtube video on the review page. Giving the reader the chance to not only read the review but listen to media. 
+
+
+* Genre management system for admin account - The admin of the site can add edit and delete Genres as part of their higher user status, this will allow for the admin to control what genres can and cant be added to the database, as this page option cant be seen for normal users i have provided a screenshot of the panel below.
+
+![Genre Panel for admin](static/img/adminpanel.png) 
 
 * Defensive design - After failing to integrate sufficient defensive design into the previous project I made sure that this project was 'Rock Solid' from using fort Knox level SECRET_KEY's to setting required attributes to all form elements and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed I implemented this code ` pattern=" HTTPS://.*" required `  to ensure that only SSL HTTP connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
 
