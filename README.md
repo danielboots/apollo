@@ -65,7 +65,7 @@ ___
 
 * **[CSS BEAUTIFIER](https://www.freeformatter.com/css-beautifier.html):** - Formats a CSS files with the chosen indentation level for optimal readability. Supports 4 indentation levels: 2 spaces, 3 spaces, 4 spaces and tabs.
 
-* **[HTML FORMATTER](https://www.freeformatter.com/html-formatter.html):** - Formats a HTML string/file with your desired indentation level. The formatting rules are not configurable but are already optimized for the best possible output.
+* **[PRETTIER](https://prettier.io/):** - Prettier is an opinionated code formatter for HTML CSS JavaScript etc
 
 * **[PEP8 COMPLIANCE CHECKER](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
  
@@ -346,6 +346,46 @@ it plays once on page load and is a fade animation, which I feel adds a subtle b
 
 
 
+### **SCHEMA - DATA & MVC**
+
+* Choosing a data structure for this project has been considered, and i have opted for a noSQL approach using MONGODB with a data model which is well organised and matches the schematics of the project. 
+
+* All Data resides in MongoDB in a cluster and using one database called _**apollo_review**_ 
+* I have separated collections of data in to 
+
+1. Genres  - Which hold the Genres data 
+2. Reviews - consisting of all key value pairs of data to populate the reviews. 
+3. users - a collection of all users registered to the site. 
+
+* MongoDB view below shows the structure of my database as pre planned when addressing MVC framework conventions. 
+
+#### Apollo Review database structure: Collections:
+
+* Below shows the database collections and how i have separated some data into different collections for ease of use and management. 
+![DATA](static/img/data/database.png)
+
+
+#### Apollo Review database structure: GENRES Collection:
+
+* I decided to use a separate collection for Genres as i have a feature in the admin panel to add and remove / genre management system, by using a different collection allowed me the freedom to use CRUD functionality regarding adding new genres, editing those genres, seeing the genres reflected instantly in the add and edit review sections of the site and the front end reviews and to also delete genres from the database.
+![DATA](static/img/data/genre.png)
+
+#### Apollo Review database structure: REVIEWS Collection.
+
+* The reviews collection consists of the main pieces of data used in the add review form and also the View (MVC and front end) it allows for these forms to require these pieces of data and input them to the collection of the apollo_review database, to be used in the front end view of the review page and also the view_review pages. These key value pairs can also be deleted or edited by the user who created the review.  
+
+![DATA](static/img/data/review.png)
+
+#### Apollo Review database structure: USERS Collection:
+
+* Users were separated to their own collection within the apollo_review database, again mainly to achieve a logical approach to structuring data in the backend.  
+
+![DATA](static/img/data/users.png)
+
+
+
+
+
 ## ✏️ **Skeleton Plane – Interface design, navigation design and giving form to function:**
 ___
 
@@ -360,6 +400,7 @@ ___
 * I have included the wireframes as a separate .pdf file as there are 7 pages, so instead of cluttering up this readme, feel free to download or view on Github using the link below.
 
 ![Wireframes.pdf](static/media/wireframing/MS3wireframes.pdf)
+
 
 
 
@@ -439,6 +480,28 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 * Youtube Embed - Allows the user to input the youtube embed url to the database and display the youtube video on the review page. Giving the reader the chance to not only read the review but listen to media. 
 
 * Defensive design - After failing to integrate sufficient defensive design into my previous project i made sure that this project was 'Rock Solid' from using fort knox level SECRET_KEY's to setting required attributes to all form elements, and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed i implemented this code ` pattern="https://.*" required `  to ensure that only SSL http connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
+
+* Following on from defensive design, i also ensured that the delete and edit buttons for reviews are only visible to the user who created that review, this was implemented by using an 'if' statement shown below. This will prevent users or visitors just logging on to the site and deleting content which isnt theirs.
+
+```html 
+
+            {% if session.user|lower == reviews.created_by|lower %}
+    <i class="fas fa-user-edit"></i>
+    <a href="{{ url_for('edit_review', review_id=reviews._id) }}"
+        class="btn btn-sm btn-dark">Edit</a>
+    <a href="{{ url_for('delete_review', review_id=reviews._id) }}"
+        class="btn btn-sm btn-dark">DELETE</a>
+    {% endif %}
+</div>
+
+</div>
+
+ ```
+
+### **Security:** 
+* I used Werkzeug for password hashing to ensure encryption of users passwords to the MongoDB. In time i may increase security by adding more user registration security features, however for this application the implementation of Werkzeug is sufficient. 
+
+
 
 
 ### **Further Dev plans**: 
@@ -656,6 +719,31 @@ apart from 2 lines being too long, however all major tests passed and no errors 
 
 ![PEP8 testing](static/img/pep8.png)
 
+* **Update** Pep8 compliance now passes 100 percent, my mentor Allen helped me in my final session with correcting linting errors within the app.py file which included correctly separating lines so they werent too long and indenting those so everything passed the linter. He also explained that how i separated the python code in app.py was essentially right but showed me the pep8 way and corrected those errors as highlighted below. 
+
+**If Statement correctly spaced at the opening brackets and indented correctly**
+
+```python 
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        reviews = list(mongo.db.reviews.find(
+            {"created_by": {"$eq": session["user"]}})
+        )
+        return render_template(
+            "profile.html", username=username, reviews=reviews
+        )
+
+    return redirect(url_for("login"))
+
+
+   ```
+
 
 
 ### **HTML Results:** 
@@ -676,6 +764,10 @@ what i do like about this tool is that it even tells you what line to look at fo
 
 * Emmet is also a great testing tool as if you do get errors or unclosed tags it will suggest to you the closing tag to use. I find this very helpful in bug fixing and testing.
 
+
+* I have an extension installed called PRETTIER which is referenced in technologies, which i employed for correct 
+
+
 * I finally used **[GTMETRIX](https://gtmetrix.com/)** which is used to test page website speeds. All testing came back fine apart from image sizes which scored pretty low. Thus i used the free online **[SQUOOSH](https://squoosh.app/)** to reduce massive image sizes upto 80% of their original file size. This is especially important as large image sizes dramatically increase page loading speeds and leads to a bad UX especially on mobile where heavy loading sites can eat data very quickly. 
 
 ___
@@ -683,15 +775,15 @@ ___
 
 **_Custom Fonts not loading correctly on mobile when deployed to heroku._** 
 
- I discovered this bug when i accessed the flask app on my mobile to test a different function, this will have to be explored as the custom font used (Lakeshore brush) doesnt show up on mobile versions of the application, however do when published to github pages, so the error resides in Heroku.
-
-
- * Custom font on Heroku : (add to this section) https://blog.liplex.de/custom-fonts-on-heroku/ > not working add to known bugs.
+ I discovered this bug when i accessed the flask app on my mobile to test a different function, this will have to be explored as the custom font used (Lakeshore brush) doesnt show up on mobile versions of the application, however do when published to github pages, so the error resides in Heroku. 
+ **UPDATE SQUASHED** - GitHub path was incorrect and also in style.css i had a - in the font name which was not needed. This fixed error.
 
 * Other bugs - as present (final meeting with mentor tomorrow ) - logo only works on home page and doesnt work on any other page, leaving as a bug unless fixed tomorrow. 
+**UPDATE SQUASHED** - Missing / in filepath name prevented logo from showing, now fixed, same fix for favicon bug, missing /. 
 
-# Note to self to address - BUG LOGO 
-# MODAL on mobile works but takes a few presses of the menu item. 
+
+
+> #### NOTE _After mentor meeting i went through the various bugs and Allen helped me fix them, there are no known bugs now in active deployment of this flask application._
 
 
  ## 🏭️ **Deployment:**
