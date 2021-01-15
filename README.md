@@ -720,7 +720,11 @@ apart from 2 lines being too long, however, all major tests passed and no errors
 
 * **Update** Pep8 compliance now passes 100 per cent, my mentor Allen helped me in my final session with correcting linting errors within the app.py file which included correctly separating lines so they weren't too long and indenting those so everything passed the linter. He also explained that how I separated the python code in app.py was essentially right but showed me the pep8 way and corrected those errors as highlighted below. 
 
-**If Statement correctly spaced at the opening brackets and indented correctly**
+* Also: The Pep8 linter was bringing up an error about my env.py file being imported but not used and on the advice of my mentor i removed that line from the app.py file and deleted the env.py file, not only is this in the gitignore file as i was readying my project and to turn debug from TRUE to FALSE i also removed this redundant file, as stated later in this documentation, i am using the congif vars inside of Heroku to store sensitive data. 
+
+
+
+**Correcting above linting error: If Statement correctly spaced at the opening brackets and indented correctly**
 
 ```python 
 
@@ -742,6 +746,9 @@ def profile(username):
 
 
    ```
+
+* **Results after mentor session: update**
+![PEP8 testing](static/img/pep8noerror.png)
 
 
 
