@@ -486,6 +486,8 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 ![Genre Panel for admin](static/img/adminpanel.png) 
 
+* Chilli Rating - I added a custom piece of Python logic that allowed users to give a 1-5 rating to their review, this resulted in using an 'if' Python statement showing the result as Chillis and a statement alongside it. This feature allows reviews to stand out from one another and will be the building blocks of the user review system to be developed at a later date.
+
 * Defensive design - After failing to integrate sufficient defensive design into the previous project I made sure that this project was 'Rock Solid' from using fort Knox level SECRET_KEY's to setting required attributes to all form elements and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed I implemented this code ` pattern=" HTTPS://.*" required `  to ensure that only SSL HTTP connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
 
 * Following on from defensive design, I also ensured that the delete and edit buttons for reviews are only visible to the user who created that review, this was implemented by using an 'if' statement shown below. This will prevent users or visitors just logging on to the site and deleting content which isn't theirs.
