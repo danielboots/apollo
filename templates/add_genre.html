@@ -4,24 +4,25 @@
 <div class="container-fluid">
     <div class="container-max">
 
-<!--New Form-->
+        <!--New Form-->
 
-<form class="text-center border border-light p-5" method="POST" action="{{ url_for('add_genre') }}">
+        <form class="text-center border border-light p-5" method="POST" action="{{ url_for('add_genre') }}">
 
-    <h3> Add Genre </h3>
-    <p>If you require to add a new genre input label in the field below.</p>
+            <h3> Add Genre </h3>
+            <p>If you require to add a new genre input label in the field below.</p>
 
-    <!-- Genre Name -->
-    <label for="genre"></label>
-    <input id="genre" placeholder="Custom Genre" name="genre" type="text" minlength="3" maxlength="25" required
-        class="form-control validate mb-4">
-   
-    <!-- Send button -->
-    <button class="btn btn-info btn-dark" type="submit">Add to database</button>
+            <!-- Genre Name -->
+            <label for="genre"></label>
+            <input id="genre" placeholder="Custom Genre" name="genre" type="text" minlength="3" maxlength="25" required
+                class="form-control validate mb-4">
 
-</form>
+            <!-- Send button -->
+            <button class="btn btn-info btn-dark" type="submit">Add to database</button>
 
-</div></div>
+        </form>
+
+    </div>
+</div>
 
 <!--End Form-->
 {% endblock %}

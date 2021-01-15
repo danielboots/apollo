@@ -1,123 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="static/img/favicon.ico"/>
-    
-    <!-- Material Design Bootstrap - Moved to top in order to override with custom css.  (MDBootstrap.com-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" type="text/css" />
-	<!--Style Sheets Bootstrap css etc-->
+    <link rel="icon" href="static/img/favicon.ico" />
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" />
+    <!-- Material Design Bootstrap - Moved to top in order to override with custom css.  (MDBootstrap.com-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"
+        type="text/css" />
+    <!--Style Sheets Bootstrap css etc-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}" />
-  
+
 
     <title>404 error</title>
 </head>
-<body>
-<header class="hero-apollo">
-		<!--Navbar-->
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<!-- Navbar brand -->
-			<a href="{{ url_for('get_reviews')}}" class="navbar-brand"><img class="brandlogo" src="static/img/logo_apollo.png" alt="logo"></a>
-			
-<!-- <img class="brandlogo" src="#" alt="logo"> -->
-			<!-- Collapse button -->
-			<button 
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#basicExampleNav"
-          aria-controls="basicExampleNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-			<!-- Collapsible content -->
-			<div class="collapse navbar-collapse" id="basicExampleNav">
-				<!-- Nav Links -->
+<body>
+    <header class="hero-apollo">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <!-- Navbar brand -->
+            <a href="{{ url_for('get_reviews')}}" class="navbar-brand"><img class="brandlogo"
+                    src="static/img/logo_apollo.png" alt="logo"></a>
+
+            <!-- <img class="brandlogo" src="#" alt="logo"> -->
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+                <!-- Nav Links -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('get_reviews')}}">Home</a></li>
-                {% if session.user|lower %}
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('add_review')}}">Add Review</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bolder"
+                            href="{{ url_for('get_reviews')}}">Home</a></li>
+                    {% if session.user|lower %}
+                    <li class="nav-item"><a class="nav-link font-weight-bolder"
+                            href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('add_review')}}">Add
+                            Review</a></li>
 
                     {% if session.user|lower == "admin"|lower %}
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('get_genres')}}">Genres</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bolder"
+                            href="{{ url_for('get_genres')}}">Genres</a></li>
                     {% endif %}
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('logout')}}">Log Out</a></li>
-                {% else %}
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('login')}}">Log In</a></li>
-                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('register')}}">Register</a></li>
-                {% endif %}
+                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('logout')}}">Log
+                            Out</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link font-weight-bolder" href="{{ url_for('login')}}">Log In</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link font-weight-bolder"
+                            href="{{ url_for('register')}}">Register</a></li>
+                    {% endif %}
                 </ul>
-			</div>
-		</nav>
-		<!-- End /.Navbar-->
-		<div class="container-fluid">
-			<!--Hero Section -->   
+            </div>
+        </nav>
+        <!-- End /.Navbar-->
+        <div class="container-fluid">
+            <!--Hero Section -->
 
-			<div class="hero-text">
-				<h1 class="text-focus-in rotate">404 Error!!!</h1>
+            <div class="hero-text">
+                <h1 class="text-focus-in rotate">404 Error!!!</h1>
                 <h5 class="focus-in-contract-bck"> Nothing to see here head back home? </h5>
 
-			
-			</div> 
-		</div>
+
+            </div>
+        </div>
     </header>
 
     <section>
-<div class="container-fluid container-max spacer">
-<div class="row">
-<div class="col spacer">
-
-    
-<a href="{{ url_for('get_reviews') }}" class="btn btn-dark pill-btn d-flex justify-content-center ">Get me out of this abyss! im lost... Home please!!</a>
-
-</div>
+        <div class="container-fluid container-max spacer">
+            <div class="row">
+                <div class="col spacer">
 
 
-</div>
+                    <a href="{{ url_for('get_reviews') }}"
+                        class="btn btn-dark pill-btn d-flex justify-content-center ">Get me out of this abyss! im
+                        lost... Home please!!</a>
+
+                </div>
 
 
-</div>
+            </div>
+
+
+        </div>
 
 
     </section>
 
 
-<!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#"> Apollo Music Review - Get your music heard!</a>
-  </div>
-  <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="#"> Apollo Music Review - Get your music heard!</a>
+        </div>
+        <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
+    </footer>
+    <!-- Footer -->
 
     <!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<!-- Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-	</script>
-	<!-- Bootstrap -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-    <script src="{{ url_for('static', filename= 'js/script.js') }}" ></script>
+        </script>
+    <script src="{{ url_for('static', filename= 'js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
-    
+
 
 </body>
-</html>
 
+</html>
